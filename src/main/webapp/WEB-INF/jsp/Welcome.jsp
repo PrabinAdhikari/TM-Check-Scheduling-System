@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Insert body here
+Welcome the the page.
+
+This is a great application for making appointment for your Tm checkin.
+
+Login as a student and make an appointment.
 </body>
 </html>

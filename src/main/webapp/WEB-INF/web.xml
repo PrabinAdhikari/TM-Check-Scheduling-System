@@ -7,7 +7,10 @@
 	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/applicationContext.xml</param-value>
+		<param-value>
+			/WEB-INF/applicationContext.xml,
+			/WEB-INF/security-context.xml
+		</param-value>
 	</context-param>
 
 	<listener>
@@ -20,18 +23,9 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
-	<servlet-mapping>
+		<servlet-mapping>
 		<servlet-name>dispatcher</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
-<!-- 	<servlet-mapping> -->
-<!-- 		<servlet-name>dispatcher</servlet-name> -->
-<!-- 		<url-pattern>/hello</url-pattern> -->
-<!-- 	</servlet-mapping> -->
-	
-<!-- 	<servlet-mapping> -->
-<!-- 		<servlet-name>dispatcher</servlet-name> -->
-<!-- 		<url-pattern>/new</url-pattern> -->
-<!-- 	</servlet-mapping> -->
 </web-app>
