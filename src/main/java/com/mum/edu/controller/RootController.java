@@ -6,15 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class RootController {
 	
-	@RequestMapping (value="/")
+	@RequestMapping (value={"/","/login"})
 	public String getRootView(){
 		System.out.println("Returning welcome page from /");
-		return "Welcome";
-	}
-	
-	@RequestMapping (value="/Login")
-	public String logIn(){
-		System.out.println("test");
 		return "LogIn";
 	}
 	
@@ -28,12 +22,6 @@ public class RootController {
 	public String check(){
 		System.out.println("check");
 		return "Welcome";
-	}
-	
-	@RequestMapping (value="/user")
-	public String user(){
-		System.out.println("test");
-		return "LogIn";
 	}
 	
 }
