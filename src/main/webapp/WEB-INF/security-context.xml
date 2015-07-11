@@ -20,7 +20,7 @@
 			always-use-default-target="true" authentication-failure-url="/loginfailed" />
 
 		<security:form-login default-target-url="/"
-			authentication-failure-url="/loginfailed" />
+			authentication-failure-url="/login" />
 		<security:logout logout-success-url="/welcome" />
 	</security:http>
 

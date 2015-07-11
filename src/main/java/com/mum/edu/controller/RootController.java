@@ -24,4 +24,16 @@ public class RootController {
 		return "Welcome";
 	}
 	
+	@RequestMapping (value="/check")
+	public String check(){
+		System.out.println("check");
+		return "Welcome";
+	}
+	
+	@RequestMapping (value="/user")
+	public String user(){
+		System.out.println("test");
+		return "LogIn";
+	}
+	
 }
