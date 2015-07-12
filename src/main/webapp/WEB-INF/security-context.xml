@@ -18,12 +18,13 @@
 			access="permitAll" />
 		<security:intercept-url pattern="/student"
 			access="isAuthenticated()" />
+			<security:intercept-url pattern="/display"
+			access="isAuthenticated()" />
 		<security:form-login login-processing-url="/j_spring_security_check"
 			login-page="/login" default-target-url="/student"
 			always-use-default-target="true" authentication-failure-url="/" />
 
-		<!-- <security:form-login default-target-url="/" -->
-		<!-- authentication-failure-url="/login" /> -->
+<!-- 		<security:form-login default-target-url="/"authentication-failure-url="/login" /> -->
 		<security:logout logout-success-url="/" />
 		<security:session-management
 			invalid-session-url="/" />

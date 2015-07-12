@@ -1,19 +1,15 @@
 package com.mum.edu.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.mum.edu.model.Student;
 
 @Controller
-public class RootController {
+public class LoginController {
 	
-	@RequestMapping (value={"/"})
-	public String getRootView(){
-		System.out.println("Returning welcome page from /");
+	@RequestMapping (value={"/","/login"})
+	public String logInPageView(){
 		return "LogIn";
 	}
 		
