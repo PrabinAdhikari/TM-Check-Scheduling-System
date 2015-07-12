@@ -13,6 +13,6 @@ import com.mum.edu.model.Student;
  */
 public interface IStudentService {
 	public void addStudent(Student student);
-	// public List<Student> getAllStudent();
+	public List<Student> getAllStudent();
 
 }

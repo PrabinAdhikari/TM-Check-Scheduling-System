@@ -39,10 +39,10 @@ public class StudentService implements IStudentService {
 
 	}
 
-	// public List<Student> getAllStudent() {
-	// // TODO Auto-generated method stub
-	// return studentDao.getAllStudent();
-	// }
+	 public List<Student> getAllStudent() {
+	 // TODO Auto-generated method stub
+	 return studentDao.getAllStudent();
+	 }
 	//
 	//
 	// public Student findStudent(long studentId){
