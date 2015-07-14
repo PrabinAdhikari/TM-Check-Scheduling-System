@@ -33,7 +33,7 @@ public class StudentController {
    
 	@RequestMapping(value="/student", method=RequestMethod.POST)
     public String addStudent(@ModelAttribute Student student){
-		System.out.println(student.getName());
+		
 		studentService.addStudent(student);
         return "Welcome";
     }

@@ -12,7 +12,6 @@ public class LoginController {
 	public String logInPageView(){
 		return "LogIn";
 	}
-		
 	@RequestMapping (value="/welcome")
 	public String welcome(Student student){
 		System.out.println("test");
