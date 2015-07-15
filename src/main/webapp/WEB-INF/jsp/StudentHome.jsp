@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+hello
 
 <c:forEach items="${studentList}" var="stu">
     <tr>      

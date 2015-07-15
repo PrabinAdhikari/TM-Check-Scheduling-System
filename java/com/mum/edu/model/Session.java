@@ -15,21 +15,38 @@ public class Session {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long uid;
-	
 	private Date start;
-	
 	private Date end;
-	
 	private String day;
-	
 	private String type;
-	
 	private int maxStudent;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="locationId")
-	private Location location;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "LocationID")
+	Location location;
 	
+//	@OneToMany(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "appointmentID")
+//	private List<Appointment> appointmentList;
+//	
+
+	
+//	public List<Appointment> getAppointmentList() {
+//		return appointmentList;
+//	}
+//
+//	public void setAppointmentList(List<Appointment> appointmentList) {
+//		this.appointmentList = appointmentList;
+//	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
 	public Session(){
 		
 	}
@@ -74,13 +91,22 @@ public class Session {
 		this.maxStudent = maxStudent;
 	}
 
-	public Location getLocation() {
-		return location;
+	public long getUid() {
+		return uid;
 	}
 
-	public void setLocation(Location location) {
-		this.location = location;
+	public void setUid(long uid) {
+		this.uid = uid;
 	}
+
 	
-	
+//	public List<Appointment> getAppointment() {
+//		return appointmentList;
+//	}
+//
+//	public void setAppointment(List<Appointment> appointment) {
+//		this.appointmentList = appointment;
+//	}
+
+
 }

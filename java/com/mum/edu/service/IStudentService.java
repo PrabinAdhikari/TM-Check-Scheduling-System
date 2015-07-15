@@ -14,5 +14,6 @@ import com.mum.edu.model.Student;
 public interface IStudentService {
 	public void addStudent(Student student);
 	public List<Student> getAllStudent();
-
+	 public Student findStudent(long studentId);
+	 public Student findStudentByUserId(long userId);
 }

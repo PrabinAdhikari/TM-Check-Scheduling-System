@@ -14,11 +14,20 @@ public class User {
 	private long uid;
 	
 	private String username;
-	
+	private String role;
+	private int enabled;
 	private String password;
 	
 	private String name;
 	
+	public long getUid() {
+		return uid;
+	}
+
+	public void setUid(long uid) {
+		this.uid = uid;
+	}
+
 	private String email;
 	
 	private Date createdDate;
@@ -75,6 +84,29 @@ public class User {
 
 	public void setLastModified(Date lastModified) {
 		this.lastModified = lastModified;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
+	@Override
+	public String toString() {
+		return "User [uid=" + uid + ", username=" + username + ", role=" + role + ", enabled=" + enabled + ", password="
+				+ password + ", name=" + name + ", email=" + email + ", createdDate=" + createdDate + ", lastModified="
+				+ lastModified + "]";
 	}
 
 }

@@ -1,13 +1,14 @@
 package com.mum.edu.model;
 
-import javax.persistence.Embedded;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -20,9 +21,20 @@ public class Teacher  {
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "userId")
-
 	private User user;
 	
+//	@OneToMany(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "appointmentID")
+//	private List<Appointment> appointmentList;
+	
+//	public List<Appointment> getAppointment() {
+//		return appointmentList;
+//	}
+//
+//	public void setAppointment(List<Appointment> appointment) {
+//		this.appointmentList = appointment;
+//	}
+
 	public long getUid() {
 		return uid;
 	}
@@ -34,11 +46,9 @@ public class Teacher  {
 	public Teacher(){
 		
 	}
-
 	public String getTeacherID() {
 		return teacherID;
 	}
-
 	public void setTeacherID(String teacherID) {
 		this.teacherID = teacherID;
 	}
@@ -46,9 +56,7 @@ public class Teacher  {
 	public User getUser() {
 		return user;
 	}
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 }

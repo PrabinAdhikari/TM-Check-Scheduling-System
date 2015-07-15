@@ -13,6 +13,28 @@ public class Location {
 	
 	private String address;
 	
+//	@OneToMany(fetch = FetchType.LAZY)
+//	@JoinColumn(name = "SessionID")
+//	private List<Appointment> sessionList;
+	
+	public long getUid() {
+		return uid;
+	}
+
+	public void setUid(long uid) {
+		this.uid = uid;
+	}
+
+//	public List<Appointment> getSessionList() {
+//		return sessionList;
+//	}
+//
+//	public void setSessionList(List<Appointment> sessionList) {
+//		this.sessionList = sessionList;
+//	}
+
+//	
+	
 	public Location(){
 		
 	}

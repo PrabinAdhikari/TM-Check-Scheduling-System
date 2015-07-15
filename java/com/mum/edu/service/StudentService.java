@@ -43,19 +43,16 @@ public class StudentService implements IStudentService {
 	 // TODO Auto-generated method stub
 	 return studentDao.getAllStudent();
 	 }
-	//
-	//
-	// public Student findStudent(long studentId){
-	// return studentDao.findStudent(studentId);
-	// }
-	//
-	// public void updateStudent(Student student){
-	// studentDao.updateStudent(student);
-	// }
-	//
-	// public void delete(long studentId){
-	// studentDao.deleteStudent(studentId);
-	// }
-	//
+	
+	 public Student findStudent(long studentId){
+	 return studentDao.findStudent(studentId);
+	 }
+
+	public Student findStudentByUserId(long userId) {
+		// TODO Auto-generated method stub
+		return studentDao.findStudentByUserId(userId);
+	}
+
+	
 
 }

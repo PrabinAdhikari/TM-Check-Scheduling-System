@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 
 import com.mum.edu.model.Student;
+import com.mum.edu.model.User;
 
 /**
  * @author Prabin
@@ -32,6 +33,9 @@ public class StudentDao implements IStudentDao {
 	public Student findStudent(long studentId) {
 		 return (Student)sf.getCurrentSession().get(Student.class, studentId);
 	}
+	public Student findStudent(String uid){
+		 return (Student)sf.getCurrentSession().get(Student.class, uid);
+	}
 
 	public void updateStudent(Student student) {
 		// TODO Auto-generated method stub
@@ -50,11 +54,18 @@ public class StudentDao implements IStudentDao {
 		Query q = (Query) sf.getCurrentSession().createQuery("from Student st");
         return q.list();
 	}
+	
 
 	public void addStudent(Student student) {
 		// TODO Auto-generated method stub
 		sf.getCurrentSession().persist(student);
 		
+	}
+	public Student findStudentByUserId(long userId) {
+		// TODO Auto-generated method stub
+		Query query = (Query) sf.getCurrentSession().createQuery("from Student stu where stu.uid = :userid ");
+	    query.setParameter("userid", userId);
+	    return (Student) query.uniqueResult();
 	}
 	
 

@@ -16,25 +16,30 @@ public class Appointment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long uid;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="studentId")
-	private Student student;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="teacherId")
-	private Teacher teacher;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="sessionId")
-	private Session session;
-	
+
 	private String status;
-	
 	private Date appointmentDate;
 	
-	public Appointment(){
-		
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "SessionID")
+	Session session;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "StudentID")
+	Student student;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "TeacherID")
+	Teacher teacher;
+	
+	
+
+	public Session getSession() {
+		return session;
+	}
+
+	public void setSession(Session session) {
+		this.session = session;
 	}
 
 	public Student getStudent() {
@@ -53,29 +58,29 @@ public class Appointment {
 		this.teacher = teacher;
 	}
 
-	public Session getSession() {
-		return session;
+	public long getUid() {
+		return uid;
 	}
 
-	public void setSession(Session session) {
-		this.session = session;
+	public void setUid(long uid) {
+		this.uid = uid;
+	}
+
+	public Appointment() {
+
 	}
 
 	public String getStatus() {
 		return status;
 	}
-
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
 	public Date getAppointmentDate() {
 		return appointmentDate;
 	}
-
 	public void setAppointmentDate(Date appointmentDate) {
 		this.appointmentDate = appointmentDate;
 	}
-	
-	
+
 }

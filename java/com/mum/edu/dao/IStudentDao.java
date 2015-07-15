@@ -20,4 +20,6 @@ public interface IStudentDao {
 	public void deleteStudent(long studentId);
 
 	public List<Student> getAllStudent();
+	
+	public Student findStudentByUserId(long userId);
 }
