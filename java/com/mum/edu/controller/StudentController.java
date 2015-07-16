@@ -67,12 +67,18 @@ public class StudentController {
 		List<Appointment> appointmentList = appointmentService.getAllAppointment(studentObj.getUid());
 		int countGroup = 0, countIndividual = 0;
 		Date appDate = new Date();
+		String statusOFReservation=null;
+		String start=null;
+		String end=null;
 		for (Appointment appointment : appointmentList) {
 			String type = appointment.getSession().getType().toString();
-			System.out.println(appointment.getSession().getType().toString());
+			//System.out.println(appointment.getSession().getType().toString());
 			String status = appointment.getStatus();
 			if (status.equalsIgnoreCase("reserved")) {
 				appDate = appointment.getAppointmentDate();
+				statusOFReservation=status.toString();
+				start=appointment.getSession().getStart();
+				end=appointment.getSession().getEnd();
 			} else {
 				if (type.equalsIgnoreCase("group"))
 					countGroup++;
@@ -82,12 +88,17 @@ public class StudentController {
 
 		}
 
-		System.out.println("Count1" + countGroup);
-		System.out.println("count2=" + countIndividual);
+//		System.out.println("Count1" + countGroup);
+//		System.out.println("count2=" + countIndividual);
 
 		model.addAttribute("countGroup", countGroup);
 		model.addAttribute("countIndividual", countIndividual);
 		model.addAttribute("appointmentDate", appDate);
+		model.addAttribute("status",statusOFReservation);
+		model.addAttribute("start",start);
+		model.addAttribute("end",end);
+		
+		
 
 		return "StudentHome";
 	}
@@ -96,11 +107,11 @@ public class StudentController {
 	public String getStudentInfo(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String username = auth.getName(); // get logged in username
-		System.out.println("User " + username);
+		//System.out.println("User " + username);
 		User userObj = userService.findUserByUsername(username);
-		System.out.println("User id in user table" + userObj.getUid());
+		//System.out.println("User id in user table" + userObj.getUid());
 		Student studentObj = studentService.findStudentByUserId(userObj.getUid());
-		System.out.println("StudentID in student table: " + studentObj.getStudentID());
+		//System.out.println("StudentID in student table: " + studentObj.getStudentID());
 		List<Appointment> appointmentList = appointmentService.getAllAppointment(studentObj.getUid());
 		model.addAttribute("appointmentList", appointmentList);
 		return "AppointmentList";
@@ -110,34 +121,7 @@ public class StudentController {
 	public String detailReport(Model model) {
 		String batch = "feb2015";
 		List<DetailReport> detailreport = appointmentService.getAllAppointmentByBatch(batch);
-//		if (appointmentList != null)
-//			System.out.println(appointmentList.get(0).getName() + appointmentList.get(0).getCnt()
-//					+ appointmentList.get(0).getStudentID());
-//		else
-//			System.out.println("empty");
-		
-		// HashMap<String, StudentTMCountPair> detailmap = new HashMap<String,
-		// StudentTMCountPair>();
-		// for (Appointment appointment : appointmentList) {
-		// StudentTMCountPair pairs = new StudentTMCountPair();
-		// String studentID = appointment.getStudent().getStudentID();
-		// String studentName = appointment.getStudent().getUser().getName();
-		// if (detailmap.containsKey(studentID)){// && !(pairs.equals(null))) {
-		// pairs.setTmCount(pairs.getTmCount() + 1);
-		// pairs.setName(studentName);
-		// detailmap.put(studentID, pairs);
-		// }
-		// else {
-		// pairs = new StudentTMCountPair();
-		// pairs.setName(studentName);
-		// pairs.setTmCount(1);
-		// detailmap.put(studentID, pairs);
-		// }
-		// System.out.println(studentID);
-		// System.out.println("Name"+studentName);
-		// }
 		model.addAttribute("detailreport", detailreport);
-
 		return "DetailReport";
 	}
 

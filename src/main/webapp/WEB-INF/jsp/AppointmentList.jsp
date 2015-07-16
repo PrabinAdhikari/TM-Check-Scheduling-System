@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	hello
+	
 	<table>
-		<c:forEach items="${appointmentList}" var="applist">
+		<c:forEach items="${appointmentList}" var="applist"
+			varStatus="counter">
 			<tr>
-				<td>${applist.uid}</td>
+				<td>${counter.count}</td>
 				<td>${applist.appointmentDate}</td>
 				<td>${applist.session.location.address}</td>
 				<td>${applist.session.start}to ${applist.session.end}</td>

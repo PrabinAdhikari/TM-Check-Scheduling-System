@@ -41,17 +41,14 @@ public class AppointmentDao implements IAppointmentDao {
 
 	public void updateAppointment(Appointment appointment) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void addAppointment(Appointment appointment) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public void deleteAppointment(long appointmentID) {
 		// TODO Auto-generated method stub
-
 	}
 
 	public SessionFactory getSf() {
@@ -108,5 +105,4 @@ public class AppointmentDao implements IAppointmentDao {
 		query.setParameter("userid", uid);
 		return (List<Appointment>) query.list();
 	}
-
 }
