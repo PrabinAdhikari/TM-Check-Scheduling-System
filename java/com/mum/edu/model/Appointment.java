@@ -20,20 +20,18 @@ public class Appointment {
 	private String status;
 	private Date appointmentDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "SessionID")
 	Session session;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "StudentID")
 	Student student;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "TeacherID")
 	Teacher teacher;
 	
-	
-
 	public Session getSession() {
 		return session;
 	}

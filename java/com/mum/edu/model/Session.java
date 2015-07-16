@@ -21,23 +21,10 @@ public class Session {
 	private String type;
 	private int maxStudent;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "LocationID")
 	Location location;
 	
-//	@OneToMany(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "appointmentID")
-//	private List<Appointment> appointmentList;
-//	
-
-	
-//	public List<Appointment> getAppointmentList() {
-//		return appointmentList;
-//	}
-//
-//	public void setAppointmentList(List<Appointment> appointmentList) {
-//		this.appointmentList = appointmentList;
-//	}
 
 	public Location getLocation() {
 		return location;
@@ -98,15 +85,6 @@ public class Session {
 	public void setUid(long uid) {
 		this.uid = uid;
 	}
-
-	
-//	public List<Appointment> getAppointment() {
-//		return appointmentList;
-//	}
-//
-//	public void setAppointment(List<Appointment> appointment) {
-//		this.appointmentList = appointment;
-//	}
 
 
 }

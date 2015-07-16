@@ -8,20 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-hello
-<p> 
-Your Group count is ${countGroup}
 
-Your Group count is ${countIndividual}
-Your Group count is ${appointmentDate}
+<table>
 
-</p>
-<c:forEach items="${studentList}" var="stu">
+<c:forEach items="${detailreport}" var="report">
     <tr>      
-        <td>${stu.name}</td>
-        
+        <td>${report.studentID}</td>
+         <td>${report.name}</td>
+         <td>${report.cnt}</td>             
     </tr>
 </c:forEach>
+</table>
   
 </body>
 </html>
